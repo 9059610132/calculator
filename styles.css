@@ -1,0 +1,169 @@
+/* ... (your global CSS styles) ... */
+body {
+    background-image: url('images/img1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.title-bar {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.title-bar h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+@keyframes slideIn {
+    0% {
+        left: -200px;
+    }
+    100% {
+        left: 20px;
+    }
+}
+
+
+.calculator {
+    width: 300px;
+    margin: 100px auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: #f5f5f5;
+    animation: floating 5s ease infinite alternate;
+    position: relative;
+}
+.lighting {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #007bff, #00e3e3) 1;
+    border-image-slice: 1;
+    animation: lightingAnimation 3s linear infinite;
+}
+
+@keyframes lightingAnimation {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+#display {
+    width: 100%;
+    padding: 10px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: white;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.clear {
+    grid-column: span 2;
+    background-color: #dc3545;
+}
+
+.equal {
+    background-color: #28a745;
+}
+
+.operator {
+    background-color: #6c757d;
+}
+
+.operator:hover {
+    background-color: #565e64;
+}
+/* ... (your existing CSS code) ... */
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .calculator {
+        width: 80%;
+        margin: 50px auto;
+        padding: 15px;
+    }
+
+    #display {
+        font-size: 20px;
+        width: 90%;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 768px) {
+    .title-bar {
+        padding: 5px 0;
+    }
+
+    .title-bar h1 {
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .calculator {
+        width: 90%;
+        margin: 30px auto;
+        padding: 10px;
+    }
+
+    #display {
+        font-size: 18px;
+        width: 80%;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .zero {
+        grid-column: span 2;
+    }
+}
+
